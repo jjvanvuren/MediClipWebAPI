@@ -14,7 +14,7 @@ namespace MediClipWebAPI.Controllers
     {
         static String DATABASE_CONNECTION = "Server=tcp:mediclip.database.windows.net,1433;Initial Catalog=MediClipDB;Persist Security Info=False;User ID=jacques;Password=gd3*#4XZ3iyFSD;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        
+        //GET all wards
         [HttpGet]
         [Route("GetAllWards")]
         public IEnumerable<Ward> Get()
@@ -44,6 +44,38 @@ namespace MediClipWebAPI.Controllers
 
                 return qresults;
             }     
+        }
+        //GET ward by WardID
+        [HttpGet]
+        [Route("GetWard")]
+        public Ward Get(int id)
+        {
+            string connectionString = DATABASE_CONNECTION;
+            SqlDataReader reader = null;
+
+            string query = "SELECT * FROM Ward WHERE WardID = '@WardID'";
+
+            query = query.Replace("@WardID", Convert.ToString(id));
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+
+                reader = command.ExecuteReader();
+                Ward qresult = new Ward();
+
+                while (reader.Read())
+                {
+                    qresult.WardID = Convert.ToInt32(reader["WardID"].ToString());
+                    qresult.Location = reader["Location"].ToString();
+                    qresult.Description = reader["Description"].ToString();
+                }
+                connection.Close();
+
+                return qresult;
+            }
         }
 
         // GET api/values

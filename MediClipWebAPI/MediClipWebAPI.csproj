@@ -522,7 +522,7 @@
     <Compile Include="Models\Ward.cs" />
     <Compile Include="Processors\WardProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\MediClipRepository.cs" />
+    <Compile Include="Repositories\WardRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
