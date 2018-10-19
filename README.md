@@ -1,6 +1,9 @@
 # MediClipWebAPI
 MediClip RESTful Web API
 
+## Documentation
+* mediclipdb.sql - script file necessary for creating the MediClip SQL database.
+
 ## Tools
 Chrome extension used to test POST and GET JSON requests:
 * [Servistate HTTP Editor & REST API Client](https://chrome.google.com/webstore/detail/servistate-http-editor-re/mmdjghedkfbdhbjhmefbbgjaihmmhkeg)
