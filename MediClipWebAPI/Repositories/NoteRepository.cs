@@ -7,19 +7,21 @@ using System.Web;
 
 namespace MediClipWebAPI.Repositories
 {
-    public class WardRepository
+    public class NoteRepository
     {
         static String DATABASE_CONNECTION = "Server=tcp:mediclip.database.windows.net,1433;Initial Catalog=MediClipDB;Persist Security Info=False;User ID=jacques;Password=gd3*#4XZ3iyFSD;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        public static bool AddWard(Ward ward)
+        public static bool AddNote(Note note)
         {
             string connectionString = DATABASE_CONNECTION;
 
-            string query = "INSERT INTO Ward VALUES ('@WardID', '@Name', '@Description');";
+            string query = "INSERT INTO Note VALUES ('@NoteID', '@PatientID', '@Title', '@Text', '@Picture');";
 
-            query = query.Replace("@WardID", Convert.ToString(ward.WardID))
-                .Replace("@Name", ward.Name)
-                .Replace("@Description", ward.Description);
+            query = query.Replace("@NoteID", Convert.ToString(note.NoteID))
+                .Replace("@PatientID", Convert.ToString(note.PatientID))
+                .Replace("@Title", note.Title)
+                .Replace("@Text", note.Text)
+                .Replace("@Picture", note.Picture);
 
             SqlConnection connection = new SqlConnection(connectionString);
 

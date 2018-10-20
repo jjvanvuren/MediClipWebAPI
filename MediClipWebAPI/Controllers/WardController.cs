@@ -36,7 +36,7 @@ namespace MediClipWebAPI.Controllers
                 {
                     Ward qr = new Ward();
                     qr.WardID = Convert.ToInt32(reader["WardID"].ToString());
-                    qr.Location = reader["Location"].ToString();
+                    qr.Name = reader["Name"].ToString();
                     qr.Description = reader["Description"].ToString();
                     qresults.Add(qr);
                 }
@@ -69,7 +69,7 @@ namespace MediClipWebAPI.Controllers
                 while (reader.Read())
                 {
                     qresult.WardID = Convert.ToInt32(reader["WardID"].ToString());
-                    qresult.Location = reader["Location"].ToString();
+                    qresult.Name = reader["Name"].ToString();
                     qresult.Description = reader["Description"].ToString();
                 }
                 connection.Close();
