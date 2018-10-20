@@ -9,24 +9,8 @@ CREATE TABLE Nurse (
 --Create the Ward table
 CREATE TABLE Ward (
 	WardID						INT				PRIMARY KEY CHECK (WardID > 0 AND WardID <= 9999),
-	WardTitle					VARCHAR(15)		NOT NULL,\
-	Location					VARCHAR(15)		NOT NULL,
+	Name						VARCHAR(15)		NOT NULL,
 	Description					VARCHAR(150)	NOT NULL
-)
-
---Create the Patient table
-CREATE TABLE Patient (
-	PatientID					INT				PRIMARY KEY CHECK (PatientID > 0 AND PatientID <= 9999),
-	WardID						INT				CHECK (WardID > 0 AND WardID <= 9999),
-	AssignDateFrom				DATE			NOT NULL,
-	AssignDateTo				DATE			NOT NULL,
-	FirstName					VARCHAR(15)		NOT NULL,
-	LastName					VARCHAR(15)		NOT NULL,
-	Dob							DATE			NOT NULL,
-	Sex							VARCHAR(7)		NOT NULL,
-	Dosage						VARCHAR(150)	NOT NULL,
-	BedNumber					INT(2)			CHECK (BedNumber > 0 AND WardID <= 30),
-	FOREIGN KEY(WardID)		REFERENCES	Ward (WardID) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 --Create the AssignedWard table
@@ -40,13 +24,72 @@ CREATE TABLE AssignedWard (
 	FOREIGN KEY(WardID)			REFERENCES Ward (WardID)	ON UPDATE CASCADE ON DELETE NO ACTION,
 )
 
+--Create the Patient table
+CREATE TABLE Patient (
+	PatientID					INT				PRIMARY KEY CHECK (PatientID > 0 AND PatientID <= 9999),
+	WardID						INT				NOT NULL,
+	AssignDateFrom				DATE			NOT NULL,
+	AssignDateTo				DATE			NOT NULL,
+	FirstName					VARCHAR(15)		NOT NULL,
+	LastName					VARCHAR(15)		NOT NULL,
+	Dob							DATE			NOT NULL,
+	Sex							VARCHAR(7)		NOT NULL,
+	Dosage						VARCHAR(150),
+	Picture						VARCHAR(100),
+	FOREIGN KEY(WardID)		REFERENCES	Ward (WardID) ON UPDATE CASCADE ON DELETE CASCADE
+)
+
 --Creating the Notes Table
-CREATE TABLE Notes(
+CREATE TABLE Note(
 	NoteID						INT 			NOT NULL CHECK (NoteID > 0 AND NoteID <= 9999),
-	PatientID					INT				NOT NULL CHECK (WardID > 0 AND WardID <= 9999),
-	NoteTitle					VARCHAR(50)		NOT NULL,
-	Note						VARCHAR(500)	NOT NULL,
-	Picture						VARCHAR(100)	NOT NULL,
+	PatientID					INT				NOT NULL,
+	Title						VARCHAR(100)	NOT NULL,
+	Text						VARCHAR(500)	NOT NULL,
+	Picture						VARCHAR(100),
 	PRIMARY KEY (NoteID, PatientID),
 	FOREIGN KEY(PatientID)		REFERENCES Patient (PatientID)	ON UPDATE CASCADE ON DELETE CASCADE,
 )
+
+SELECT * FROM Patient
+SELECT * FROM Ward
+SELECT * FROM AssignedWard
+SELECT * FROM Nurse
+SELECT * FROM Note
+
+DROP TABLE Note;
+DROP TABLE Patient;
+DROP TABLE Ward;
+DROP TABLE AssignedWard;
+DROP TABLE Nurse;
+
+
+INSERT INTO Ward (WardID, Name, Description)
+VALUES 
+(1, 'Pediatrics', 'Pediatric stuff'),
+(2, 'Maternity', 'Maternity stuff'),
+(3, 'Geriatrics', 'Geriatric stuff'),
+(4, 'Psychiatrics', 'Psychiatric stuff');
+
+SELECT * FROM Ward
+
+INSERT INTO Nurse (NurseID, FirstName, LastName, Password)
+VALUES 
+(1, 'Joy', 'Rainbow', '1234'),
+(2, 'Sally', 'Summers', '1234'),
+(3, 'Joseph', 'Moseph', '1234');
+
+SELECT * FROM Nurse
+
+INSERT INTO Patient (PatientID, WardID, AssignDateFrom, AssignDateTo, FirstName, LastName, Dob, Sex, Dosage, Picture)
+VALUES 
+(1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'N/A', 'bobross.jpg'),
+(2, 3, '2018-09-21', '2018-11-1', 'Joe', 'Grow', '1990-08-04', 'Male', 'N/A', 'joegrow.jpg'),
+(3, 2, '2018-01-11', '2018-08-11', 'Molly', 'Polly', '1980-06-04', 'Female', 'N/A', 'mollypolly.jpg'),
+(4, 1, '2018-03-12', '2018-05-12', 'Jane', 'Gain', '1993-07-20', 'Female', 'N/A', 'janegain.jpg');
+
+SELECT * FROM Patient
+
+
+
+
+INSERT INTO Note (NoteID, PatientID, Title, Text, Picture)
