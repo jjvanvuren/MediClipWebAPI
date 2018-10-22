@@ -37,11 +37,11 @@ namespace MediClipWebAPI.Controllers
                     Patient qr = new Patient();
                     qr.PatientID = Convert.ToInt32(reader["PatientID"].ToString());
                     qr.WardID = Convert.ToInt32(reader["WardID"].ToString());
-                    qr.AssignDateFrom = Convert.ToDateTime(reader["AssignDateFrom"].ToString());
-                    qr.AssignDateTo = Convert.ToDateTime(reader["AssignDateTo"].ToString());
+                    qr.AssignDateFrom = reader["AssignDateFrom"].ToString();
+                    qr.AssignDateTo = reader["AssignDateTo"].ToString();
                     qr.FirstName = reader["FirstName"].ToString();
                     qr.LastName = reader["LastName"].ToString();
-                    qr.Dob = Convert.ToDateTime(reader["Dob"].ToString());
+                    qr.Dob = reader["Dob"].ToString();
                     qr.Sex = reader["Sex"].ToString();
                     qr.Dosage = reader["Dosage"].ToString();
                     qr.Picture = reader["Picture"].ToString();
@@ -78,11 +78,11 @@ namespace MediClipWebAPI.Controllers
                     Patient qr = new Patient();
                     qr.PatientID = Convert.ToInt32(reader["PatientID"].ToString());
                     qr.WardID = Convert.ToInt32(reader["WardID"].ToString());
-                    qr.AssignDateFrom = Convert.ToDateTime(reader["AssignDateFrom"].ToString());
-                    qr.AssignDateTo = Convert.ToDateTime(reader["AssignDateTo"].ToString());
+                    qr.AssignDateFrom = reader["AssignDateFrom"].ToString();
+                    qr.AssignDateTo = reader["AssignDateTo"].ToString();
                     qr.FirstName = reader["FirstName"].ToString();
                     qr.LastName = reader["LastName"].ToString();
-                    qr.Dob = Convert.ToDateTime(reader["Dob"].ToString());
+                    qr.Dob = reader["Dob"].ToString();
                     qr.Sex = reader["Sex"].ToString();
                     qr.Dosage = reader["Dosage"].ToString();
                     qr.Picture = reader["Picture"].ToString();
@@ -121,11 +121,11 @@ namespace MediClipWebAPI.Controllers
                 {
                     qresult.PatientID = Convert.ToInt32(reader["PatientID"].ToString());
                     qresult.WardID = Convert.ToInt32(reader["WardID"].ToString());
-                    qresult.AssignDateFrom = Convert.ToDateTime(reader["AssignDateFrom"].ToString());
-                    qresult.AssignDateTo = Convert.ToDateTime(reader["AssignDateTo"].ToString());
+                    qresult.AssignDateFrom = reader["AssignDateFrom"].ToString();
+                    qresult.AssignDateTo = reader["AssignDateTo"].ToString();
                     qresult.FirstName = reader["FirstName"].ToString();
                     qresult.LastName = reader["LastName"].ToString();
-                    qresult.Dob = Convert.ToDateTime(reader["Dob"].ToString());
+                    qresult.Dob = reader["Dob"].ToString();
                     qresult.Sex = reader["Sex"].ToString();
                     qresult.Dosage = reader["Dosage"].ToString();
                     qresult.Picture = reader["Picture"].ToString();
