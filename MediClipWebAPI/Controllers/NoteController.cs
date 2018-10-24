@@ -90,7 +90,7 @@ namespace MediClipWebAPI.Controllers
         // POST Note to notes table
         [HttpPost]
         [Route("SaveNote")]
-        public bool SaveNote(Note note)
+        public bool SaveNote(PostNote note)
         {
             if (note == null)
             {

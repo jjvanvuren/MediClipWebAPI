@@ -9,7 +9,7 @@ namespace MediClipWebAPI.Processors
 {
     public class NoteProcessor
     {
-        public static bool ProcessAddNote(Note note)
+        public static bool ProcessAddNote(PostNote note)
         {
             //Processing, Validating, Formating
             return NoteRepository.AddNote(note);

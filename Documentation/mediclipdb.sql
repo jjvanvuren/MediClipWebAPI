@@ -41,7 +41,7 @@ CREATE TABLE Patient (
 
 --Creating the Notes Table
 CREATE TABLE Note(
-	NoteID						INT 			NOT NULL CHECK (NoteID > 0 AND NoteID <= 9999),
+	NoteID						INT 			IDENTITY(1,1) CHECK (NoteID > 0 AND NoteID <= 9999),
 	PatientID					INT				NOT NULL,
 	Title						VARCHAR(100)	NOT NULL,
 	Text						VARCHAR(500)	NOT NULL,
@@ -91,9 +91,13 @@ VALUES
 (7, 2, '2018-03-12', '2018-05-12', 'Amanda', 'Sander', '1993-07-20', 'Female', 'N/A', 'amandasander.jpg'),
 (8, 1, '2018-03-12', '2018-05-12', 'Joel', 'Bowl', '1993-07-20', 'Male', 'N/A', 'joelbowl.jpg');
 
-SELECT * FROM Patient
+SELECT * FROM Patient;
 
 DELETE FROM Patient;
 
+SELECT * FROM Note;
 
-INSERT INTO Note (NoteID, PatientID, Title, Text, Picture)
+INSERT INTO Note (PatientID, Title, Text)
+VALUES
+(1, 'Painkillers', 'Patient requests more painkillers. Has alot of pain in his leg.'),
+(1, 'Leg Pain', 'Patient says his leg feels much better since he got some painkillers.');
