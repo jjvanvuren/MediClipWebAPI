@@ -13,11 +13,10 @@ The API URL is https://mediclipwebapi.azurewebsites.net/
 * The JSON format for SaveNote is:
 ```json
 {
-  "NoteID": 1,
-  "PatientID": 2,
-  "Title": "sample string 3",
-  "Text": "sample string 4",
-  "Picture": "sample string 5"
+  "PatientID": 1,
+  "Title": "sample string 2",
+  "Text": "sample string 3",
+  "Picture": "picture.jpg"
 }
 ```
 ### Ward
