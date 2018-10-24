@@ -7,6 +7,8 @@ The API URL is https://mediclipwebapi.azurewebsites.net/
 
 ### Note
 * To get all notes associated with the patient use `GetPatientNotes?id={id}` where `{id}` is the PatientID
+* To get a specific note for a patient use `GetNote?nId={nId}&pId={pId}`
+where `{nId}` is the NoteID and `{pId}` is the PatientID
 * To use POST to save a new note to the SQL server use `SaveNote`
 * The JSON format for SaveNote is:
 ```json
@@ -24,7 +26,7 @@ The API URL is https://mediclipwebapi.azurewebsites.net/
 ### Patient
 * To get all the patients use `GetAllPatients`
 * To get all the patients in a specific ward use `GetWardPatients?id={id}` where `{id}` is the WardID
-* To get a specific patient using their patient ID and assigned ward use `GetPatient?wId={wId}&pId={pId}`  
+* To get a specific patient using their patient ID and assigned ward use `GetPatient?wId={wId}&pId={pId}`
 where `{wId}` is WardID and `{pId}` is PatientID
 ## Documentation
 * mediclipdb.sql - script file necessary for creating the MediClip SQL database
