@@ -1,9 +1,10 @@
 --Create the Nurse Table
 CREATE TABLE Nurse (
 	NurseID						INT				PRIMARY KEY CHECK (NurseID > 0 AND NurseID <= 9999),
-	FirstName					VARCHAR(15)		NOT NULL,
-	LastName					VARCHAR(15)		NOT NULL,
-	Password					VARCHAR(30)		NOT NULL
+	UserName					VARCHAR(30)		NOT NULL,
+	FirstName					VARCHAR(15),
+	LastName					VARCHAR(15),
+	Password					VARCHAR(30)
 )
 
 --Create the Ward table
@@ -39,7 +40,7 @@ CREATE TABLE Patient (
 	FOREIGN KEY(WardID)		REFERENCES	Ward (WardID) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
---Creating the Notes Table
+--Create the Notes Table
 CREATE TABLE Note(
 	NoteID						INT 			IDENTITY(1,1) CHECK (NoteID > 0 AND NoteID <= 9999),
 	PatientID					INT				NOT NULL,
@@ -62,7 +63,7 @@ DROP TABLE Ward;
 DROP TABLE AssignedWard;
 DROP TABLE Nurse;
 
-
+--Insert data into Ward
 INSERT INTO Ward (WardID, Name, Description)
 VALUES 
 (1, 'Pediatrics', 'Pediatric stuff'),
@@ -70,16 +71,14 @@ VALUES
 (3, 'Geriatrics', 'Geriatric stuff'),
 (4, 'Psychiatrics', 'Psychiatric stuff');
 
-SELECT * FROM Ward
-
-INSERT INTO Nurse (NurseID, FirstName, LastName, Password)
+--Insert data into Nurse
+INSERT INTO Nurse (NurseID, UserName, FirstName, LastName, Password)
 VALUES 
-(1, 'Joy', 'Rainbow', '1234'),
-(2, 'Sally', 'Summers', '1234'),
-(3, 'Joseph', 'Moseph', '1234');
+(1, 'joyrainbow','Joy', 'Rainbow', '1234'),
+(2, 'sallysummers','Sally', 'Summers', '1234'),
+(3, 'josephmoseph','Joseph', 'Moseph', '1234');
 
-SELECT * FROM Nurse
-
+--Insert data into Patient
 INSERT INTO Patient (PatientID, WardID, AssignDateFrom, AssignDateTo, FirstName, LastName, Dob, Sex, Dosage, Picture)
 VALUES 
 (1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'N/A', 'bobross.jpg'),
@@ -91,12 +90,7 @@ VALUES
 (7, 2, '2018-03-12', '2018-05-12', 'Amanda', 'Sander', '1993-07-20', 'Female', 'N/A', 'amandasander.jpg'),
 (8, 1, '2018-03-12', '2018-05-12', 'Joel', 'Bowl', '1993-07-20', 'Male', 'N/A', 'joelbowl.jpg');
 
-SELECT * FROM Patient;
-
-DELETE FROM Patient;
-
-SELECT * FROM Note;
-
+--Insert data into Note
 INSERT INTO Note (PatientID, Title, Text)
 VALUES
 (1, 'Painkillers', 'Patient requests more painkillers. Has alot of pain in his leg.'),

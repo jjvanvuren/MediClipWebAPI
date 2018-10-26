@@ -27,6 +27,8 @@ The API URL is https://mediclipwebapi.azurewebsites.net/
 * To get all the patients in a specific ward use `GetWardPatients?id={id}` where `{id}` is the WardID
 * To get a specific patient using their patient ID and assigned ward use `GetPatient?wId={wId}&pId={pId}` <br />
 where `{wId}` is WardID and `{pId}` is PatientID
+### Nurse
+* To get all the Nurses use `GetAllNurses`
 ## Documentation
 * mediclipdb.sql - script file necessary for creating the MediClip SQL database
 
