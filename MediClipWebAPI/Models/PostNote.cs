@@ -5,6 +5,7 @@ using System.Web;
 
 namespace MediClipWebAPI.Models
 {
+    // Model used for posting notes to the MediClip database
     public class PostNote
     {
         public int PatientID { get; set; }

@@ -66,11 +66,52 @@ namespace MediClipWebAPI.Controllers
 
                 return qresults;
             }
-
             //============================================= 
             //End reference D1
             //============================================= 
+        }
 
+
+        // Retrieve a single nurse from the database using their username
+        //GET /GetNurse?uname={uname}
+        [HttpGet]
+        [Route("GetNurse")]
+        public Nurse Get(String uname)
+        {
+            string connectionString = DATABASE_CONNECTION;
+            SqlDataReader reader = null;
+
+            // The SQL query to be sent to the server
+            string query = "SELECT * FROM Nurse WHERE UserName = '@UserName'";
+
+            //Replace @UserName with the requested nurses username
+            query = query.Replace("@UserName", Convert.ToString(uname));
+
+            // Establish connection with the SQL server
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open(); // Open the connection to the server
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                // Assign the SQL query and connection details to the reader
+                reader = command.ExecuteReader();
+
+                // Create a new nurse that will contain data from server
+                Nurse qresult = new Nurse();
+
+                // Read the data from the server to qresult
+                while (reader.Read())
+                {
+                    qresult.NurseID = Convert.ToInt32(reader["NurseID"].ToString());
+                    qresult.UserName = reader["UserName"].ToString();
+                    qresult.FirstName = reader["FirstName"].ToString();
+                    qresult.LastName = reader["LastName"].ToString();
+                    qresult.Password = reader["Password"].ToString();
+                }
+                connection.Close(); // Close the connection to the server
+
+                return qresult;
+            }
         }
     }
 }

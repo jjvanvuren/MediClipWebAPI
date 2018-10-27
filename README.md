@@ -29,6 +29,7 @@ The API URL is https://mediclipwebapi.azurewebsites.net/
 where `{wId}` is WardID and `{pId}` is PatientID
 ### Nurse
 * To get all the Nurses use `GetAllNurses`
+* To get a single nurse from the database by username use `GetNurse?uname={uname}` where `{uname}` is the nurses username
 ## Documentation
 * mediclipdb.sql - script file necessary for creating the MediClip SQL database
 

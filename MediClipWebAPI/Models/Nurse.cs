@@ -5,6 +5,7 @@ using System.Web;
 
 namespace MediClipWebAPI.Models
 {
+    // Model for retrieving nurses from the MediClip database
     public class Nurse
     {
         public int NurseID { get; set; }
