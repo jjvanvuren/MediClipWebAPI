@@ -81,14 +81,14 @@ VALUES
 --Insert data into Patient
 INSERT INTO Patient (PatientID, WardID, AssignDateFrom, AssignDateTo, FirstName, LastName, Dob, Sex, Dosage, Picture)
 VALUES 
-(1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'N/A', 'bobross.jpg'),
-(2, 3, '2018-09-21', '2018-11-1', 'Joe', 'Grow', '1990-08-04', 'Male', 'N/A', 'joegrow.jpg'),
-(3, 2, '2018-01-11', '2018-08-11', 'Molly', 'Polly', '1980-06-04', 'Female', 'N/A', 'mollypolly.jpg'),
-(4, 1, '2018-03-12', '2018-05-12', 'Jane', 'Gain', '1993-07-20', 'Female', 'N/A', 'janegain.jpg'),
-(5, 4, '2018-03-12', '2018-05-12', 'Jenny', 'Craig', '1993-07-20', 'Female', 'N/A', 'jennycraig.jpg'),
-(6, 3, '2018-03-12', '2018-05-12', 'Billy', 'Jean', '1993-07-20', 'Male', 'N/A', 'billyjean.jpg'),
-(7, 2, '2018-03-12', '2018-05-12', 'Amanda', 'Sander', '1993-07-20', 'Female', 'N/A', 'amandasander.jpg'),
-(8, 1, '2018-03-12', '2018-05-12', 'Joel', 'Bowl', '1993-07-20', 'Male', 'N/A', 'joelbowl.jpg');
+(1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'N/A', 'bobross.jpeg'),
+(2, 3, '2018-09-21', '2018-11-1', 'Joe', 'Grow', '1990-08-04', 'Male', 'N/A', ''),
+(3, 2, '2018-01-11', '2018-08-11', 'Molly', 'Polly', '1980-06-04', 'Female', 'N/A', ''),
+(4, 1, '2018-03-12', '2018-05-12', 'Jane', 'Gain', '1993-07-20', 'Female', 'N/A', ''),
+(5, 4, '2018-03-12', '2018-05-12', 'Jenny', 'Craig', '1993-07-20', 'Female', 'N/A', ''),
+(6, 3, '2018-03-12', '2018-05-12', 'Billy', 'Jean', '1993-07-20', 'Male', 'N/A', ''),
+(7, 2, '2018-03-12', '2018-05-12', 'Amanda', 'Sander', '1993-07-20', 'Female', 'N/A', ''),
+(8, 1, '2018-03-12', '2018-05-12', 'Joel', 'Bowl', '1993-07-20', 'Male', 'N/A', '');
 
 --Insert data into Note
 INSERT INTO Note (PatientID, Title, Text)
