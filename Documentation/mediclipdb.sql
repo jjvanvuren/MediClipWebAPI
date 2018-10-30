@@ -81,7 +81,7 @@ VALUES
 --Insert data into Patient
 INSERT INTO Patient (PatientID, WardID, AssignDateFrom, AssignDateTo, FirstName, LastName, Dob, Sex, Dosage, Picture)
 VALUES 
-(1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'N/A', 'bobross.jpeg'),
+(1, 4, '2018-10-21', '2018-12-21', 'Bob', 'Ross', '1974-10-21', 'Male', 'Mesalazine 4mg per day' + CHAR(13) + CHAR(10) + 'ibuprofen 200mg twice a day', 'bobross.jpeg'),
 (2, 3, '2018-09-21', '2018-11-1', 'Joe', 'Grow', '1990-08-04', 'Male', 'N/A', ''),
 (3, 2, '2018-01-11', '2018-08-11', 'Molly', 'Polly', '1980-06-04', 'Female', 'N/A', ''),
 (4, 1, '2018-03-12', '2018-05-12', 'Jane', 'Gain', '1993-07-20', 'Female', 'N/A', ''),
@@ -95,3 +95,4 @@ INSERT INTO Note (PatientID, Title, Text)
 VALUES
 (1, 'Painkillers', 'Patient requests more painkillers. Has alot of pain in his leg.'),
 (1, 'Leg Pain', 'Patient says his leg feels much better since he got some painkillers.');
+
