@@ -46,7 +46,7 @@ CREATE TABLE Note(
 	PatientID					INT				NOT NULL,
 	Title						VARCHAR(100)	NOT NULL,
 	Text						VARCHAR(500)	NOT NULL,
-	Picture						VARCHAR(100),
+	Picture						VARCHAR(1000),
 	PRIMARY KEY (NoteID, PatientID),
 	FOREIGN KEY(PatientID)		REFERENCES Patient (PatientID)	ON UPDATE CASCADE ON DELETE CASCADE,
 )
