@@ -31,7 +31,7 @@ namespace MediClipWebAPI.Controllers
             connection.Open(); // Open the connection to the server
 
             //===================================================================================================
-            //Reference D1: Externally Sourced algorithm
+            //Reference D2: Externally Sourced algorithm
             //Purpose: Used to read the data from the SQL server to into the list of nurses.
             //         This method of reading data from the SQL server was also used in other controllers.
             //Date: 19/10/2018

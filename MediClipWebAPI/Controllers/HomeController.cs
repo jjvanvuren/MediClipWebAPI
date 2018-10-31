@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 //==============================================================================================
-//Reference E1: Video Tutorial
+//Reference D1: Video Tutorial
 //Purpose: Used to learn how to create a web API service and connect to a SQL database.
 //Date: 19/10/2018
 //Source: YouTube
