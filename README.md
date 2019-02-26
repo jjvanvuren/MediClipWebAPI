@@ -1,5 +1,5 @@
 # MediClipWebAPI
-MediClip RESTful Web API
+MediClip RESTful Web API by by Francois Janse van Vuren, Karl Foley and Jacobus Janse van Vuren
 
 ## Instructions
 
