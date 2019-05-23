@@ -1,6 +1,11 @@
 # MediClipWebAPI
 MediClip RESTful Web API by by Francois Janse van Vuren, Karl Foley and Jacobus Janse van Vuren
 
+### Note:
+This GitHub repository does **NOT** include an open-source license. This is intensional.  
+To find out more about what this means follow the link below:<br>
+https://choosealicense.com/no-permission/
+
 ## Instructions
 
 The API URL is https://mediclipwebapi.azurewebsites.net/
